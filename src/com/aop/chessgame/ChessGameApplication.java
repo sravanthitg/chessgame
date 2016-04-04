@@ -1,5 +1,7 @@
 package com.aop.chessgame;
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -32,6 +34,11 @@ public class ChessGameApplication extends JFrame implements ChessGameListener, M
 	public ChessGameApplication() {
 		// Create Menus
 		createMenus();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    setPreferredSize(new Dimension(400, 300));
+	    pack();
+	    setLocationRelativeTo(null);
+	    setVisible(true);
 		// create PlaceHolder for games/panes
 		this.placeHolder = new JPanel();
 		this.add(this.placeHolder);
@@ -47,7 +54,7 @@ public class ChessGameApplication extends JFrame implements ChessGameListener, M
 	private void createMenus() {
 		// Create New Game Menu
 		JMenuBar bar = new JMenuBar();
-		this.add(bar);
+		this.setJMenuBar(bar);
 		JMenu game = new JMenu("Game");
 		JMenuItem newGame = new JMenuItem("New Game");
 		game.add(newGame);
