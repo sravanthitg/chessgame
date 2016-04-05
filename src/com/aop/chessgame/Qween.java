@@ -1,5 +1,6 @@
 package com.aop.chessgame;
 
+
 public class Qween extends Coin {
 	public Qween(boolean isWhite) {
 		super(CoinType.QWEEN, isWhite);
