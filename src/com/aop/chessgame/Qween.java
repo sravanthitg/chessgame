@@ -51,13 +51,13 @@ public class Qween extends Coin {
 		int destRow = getRow(dest);
 		int destColumn = getColumn(dest);
 		if (Math.abs(currentRow - destRow) == Math.abs(currentColumn - destColumn)) {
-			for (int x = Math.min(currentColumn, destColumn) + 1; x < Math.max(currentColumn, destColumn) - 1; x++) {
-				for (int y = Math.min(currentRow, destRow) + 1; y < Math.max(currentRow, destRow) - 1; y++) {
-					// make sure all are free
-					if (game.getCoin(getIndex(x, y)) != null) {
-						return false;
-					}
+			int y = Math.min(currentRow, destRow) + 1;
+			for (int x = Math.min(currentColumn, destColumn) + 1; x < Math.max(currentColumn, destColumn); x++) {
+				// make sure all are free
+				if (game.getCoin(getIndex(y, x)) != null) {
+					return false;
 				}
+				y++;
 			}
 			return true;
 		} else {
