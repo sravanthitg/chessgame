@@ -34,8 +34,9 @@ public class ChessGameApplication extends JFrame implements ChessGameListener, M
 	public ChessGameApplication() {
 		// Create Menus
 		createMenus();
+		//show the size and of window 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    setPreferredSize(new Dimension(400, 300));
+	    setPreferredSize(new Dimension(800, 800));
 	    pack();
 	    setLocationRelativeTo(null);
 	    setVisible(true);
